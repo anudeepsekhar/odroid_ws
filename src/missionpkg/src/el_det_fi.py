@@ -24,7 +24,7 @@ class ellipse_detection:
 
     def callback(self,data):
         try:
-            ret,img = self.bridge.imgmsg_to_cv2(data, "bgr8")
+            ret=img = self.bridge.imgmsg_to_cv2(data, "bgr8")
         except CvBridgeError as e:
             print(e)
 
