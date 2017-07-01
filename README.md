@@ -3,6 +3,7 @@
 ```
 git clone https://github.com/TEAMIFOR/odroid_ws.git
 cd odroid_ws
+chmod 755 launcher.sh
 ./launcher.sh
 ```
 
