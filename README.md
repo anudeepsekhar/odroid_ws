@@ -2,6 +2,7 @@
 
 ```
 git clone https://github.com/TEAMIFOR/odroid_ws.git
+cd odroid_ws
 ./launcher.sh
 ```
 
