@@ -2,6 +2,8 @@
 
 ```
 git clone https://github.com/TEAMIFOR/odroid_ws.git
+cd odroid_ws
+git submodule update --init --recursive
 ./launcher.sh
 ```
 
