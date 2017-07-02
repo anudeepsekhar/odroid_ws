@@ -34,7 +34,7 @@
 
   <node name="ellipse_detection" pkg="missionpkg" type="el_det_fi.py" />
 
-  <node name="offboard2" pkg="missionpkg" type="offb2.cpp" output="screen" />
+  <node name="offboard2" pkg="missionpkg" type="offboard2" output="screen" />
 
   <!--node name="offboard1" pkg="missionpkg" type="offb1.cpp" output="screen">
     <param name="wn" value="0.2" />
