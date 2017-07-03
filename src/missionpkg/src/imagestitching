@@ -1,0 +1,18 @@
+import cv
+
+im = cv.LoadImageM('coins.jpg')
+im2 = cv.LoadImageM('coins.jpg',cv.CV_LOAD_IMAGE_GRAYSCALE)
+bw = cv.CreateImage((im.width,im.height), cv.IPL_DEPTH_8U, 3)
+new = cv.CreateImage((im.width*2,im.height), cv.IPL_DEPTH_8U, 3)
+
+cv.Merge(im2, im2, im2, None, bw)
+
+cv.SetImageROI(new, (0,0,im.width,im.height))
+cv.Add(new, im, new)
+
+cv.SetImageROI(new, (im.width,0,im.width,im.height))
+cv.Add(new, bw, new)
+cv.ResetImageROI(new)
+cv.ShowImage('double', new)
+cv.SaveImage('double.jpg', new)
+cv.WaitKey(0)
