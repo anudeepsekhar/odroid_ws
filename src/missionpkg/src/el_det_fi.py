@@ -49,8 +49,8 @@ class ellipse_detection:
                     print x,y
                     cv2.ellipse(img,box,(200,0,0), 2)
 
-        cv2.imshow('thresh', threshim)
-        cv2.imshow('mywindow', img)
+        cv2.imshow('thresh', threshim)# remove this line(we don't need to show the output)
+        cv2.imshow('mywindow', img)# remove this line(we don't need to show the output)
         cv2.waitKey(1)
 
     def getTrackValue(self, value):
