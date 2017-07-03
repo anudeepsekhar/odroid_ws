@@ -2,20 +2,29 @@ import cv2
 import numpy as np
 
 
+cap = cv2.VideoCapture(0)
+while True:
+		ret_val, img1 = cap.read()
+		ret_val, img2 = cap.read()
 
-img1 = cv2.imread('coins.jpg')
-img2 = cv2.imread('coins.jpg')
-img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
-img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
-h1, w1 = img1.shape[:2]
-h2, w2 = img2.shape[:2]
-vis = np.zeros((max(h1, h2), w1+w2 ), np.uint8)
-vis[:h1, :w1 ] = img1
-vis[:h2, w1:w1+w2] = img2
-vis1 = np.zeros((max(h1,h2), w1+w2 , 3),np.uint8)
-vis1 = cv2.cvtColor(vis, cv2.COLOR_GRAY2BGR)
+		img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+		img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
+		h1, w1 = img1.shape[:2]
+		h2, w2 = img2.shape[:2]
+		vis = np.zeros((max(h1, h2), w1+w2 ), np.uint8)
+		vis[:h1, :w1 ] = img1
+		vis[:h2, w1:w1+w2] = img2
+		vis1 = np.zeros((max(h1,h2), w1+w2 , 3),np.uint8)
+		vis1 = cv2.cvtColor(vis, cv2.COLOR_GRAY2BGR)
+		
+		cv2.imshow('my webcam', vis1)
+		if cv2.waitKey(1) == 27: 
+			break  # esc to quit
+      
+      
+cap.release()
+
+cv2.destroyAllWindows()
 
 
-cv2.imshow("test", vis)
-cv2.imshow("test2",vis1)
-cv2.waitKey()
+
